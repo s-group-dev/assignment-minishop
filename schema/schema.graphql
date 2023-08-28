@@ -11,7 +11,9 @@ type OrderedProduct {
 }
 
 type Order {
-  customerId: ID!
+  orderId: ID!
+  timestamp: String!
+  customerId: String!
   products: [OrderedProduct!]!
   totalSum: Int!
 }

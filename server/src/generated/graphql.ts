@@ -18,8 +18,10 @@ export type Scalars = {
 
 export type Order = {
   __typename?: 'Order';
-  customerId: Scalars['ID']['output'];
+  customerId: Scalars['String']['output'];
+  orderId: Scalars['ID']['output'];
   products: Array<OrderedProduct>;
+  timestamp: Scalars['String']['output'];
   totalSum: Scalars['Int']['output'];
 };
 
@@ -144,8 +146,10 @@ export type ResolversParentTypes = {
 };
 
 export type OrderResolvers<ContextType = any, ParentType extends ResolversParentTypes['Order'] = ResolversParentTypes['Order']> = {
-  customerId?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  customerId?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  orderId?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   products?: Resolver<Array<ResolversTypes['OrderedProduct']>, ParentType, ContextType>;
+  timestamp?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   totalSum?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };

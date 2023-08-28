@@ -6,7 +6,7 @@ import { readFileSync } from "fs";
 import { Resolvers } from "./generated/graphql.js";
 import { queries } from "./queries.js";
 
-const typeDefs = readFileSync("./schema/schema.graphql", { encoding: "utf-8" });
+const typeDefs = readFileSync("../schema/schema.graphql", { encoding: "utf-8" });
 
 // Resolvers define how to fetch the types defined in your schema.
 const resolvers: Resolvers = {
