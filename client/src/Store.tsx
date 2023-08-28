@@ -25,16 +25,14 @@ export function Store() {
       {loading ? (
         <p>Loading products...</p>
       ) : (
-        <p>
-          {data?.products.map((product) => (
-            <ProductCard
-              key={product.ean}
-              name={product.name}
-              ean={product.ean}
-              price={product.price}
-            />
-          ))}
-        </p>
+        data?.products.map((product) => (
+          <ProductCard
+            key={product.ean}
+            name={product.name}
+            ean={product.ean}
+            price={product.price}
+          />
+        ))
       )}
     </>
   );
