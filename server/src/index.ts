@@ -1,27 +1,16 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import { readFileSync } from "fs";
-import { Book, Resolvers } from "./generated/graphql";
+
+// Since we're using ES Modules, .js extension needs to be added to imports
+import { Resolvers } from "./generated/graphql.js";
+import { queries } from "./queries.js";
 
 const typeDefs = readFileSync("./schema/schema.graphql", { encoding: "utf-8" });
 
-const books: Book[] = [
-  {
-    title: "The Awakening",
-    author: "Kate Chopin",
-  },
-  {
-    title: "City of Glass",
-    author: "Paul Auster",
-  },
-];
-
 // Resolvers define how to fetch the types defined in your schema.
-// This resolver retrieves books from the "books" array above.
 const resolvers: Resolvers = {
-  Query: {
-    books: () => books,
-  },
+  Query: queries,
 };
 
 // The ApolloServer constructor requires two parameters: your schema
