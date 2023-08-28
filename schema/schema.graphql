@@ -1,0 +1,24 @@
+type Product {
+  name: String!
+  ean: ID!
+  price: Float!
+  imageUrl: String!
+}
+
+type OrderedProduct {
+  ean: String!
+  amount: Int!
+}
+
+type Order {
+  orderId: ID!
+  timestamp: String!
+  customerId: String!
+  products: [OrderedProduct!]!
+  totalSum: Int!
+}
+
+type Query {
+  products: [Product!]!
+  orders(customerId: ID!): [Order!]!
+}
