@@ -41,11 +41,7 @@ export function Orders() {
   );
 }
 
-type OrderSummaryProps = {
-  timestamp: string;
-  totalSum: number;
-};
-function OrderSummary(props: OrderSummaryProps) {
+function OrderSummary(props) {
   return (
     <div>
       <h3>Order</h3>

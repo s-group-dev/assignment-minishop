@@ -17,23 +17,27 @@ const getProductsQuery = gql(`
 export function Store() {
   const { loading, data } = useQuery(getProductsQuery);
 
+  const displayData = () => {
+    if (!data) {
+      return <p>No Products</p>;
+    }
+
+    return data.products.map((product) => (
+      <ProductCard
+        key={product.ean}
+        name={product.name}
+        ean={product.ean}
+        price={product.price}
+      />
+    ));
+  };
+
   return (
     <>
       <h1>Minishop</h1>
       <Link to="/orders">My orders</Link>
       <h2>Available products</h2>
-      {loading ? (
-        <p>Loading products...</p>
-      ) : (
-        data?.products.map((product) => (
-          <ProductCard
-            key={product.ean}
-            name={product.name}
-            ean={product.ean}
-            price={product.price}
-          />
-        ))
-      )}
+      {loading ? <p>Loading products...</p> : displayData()}
     </>
   );
 }
