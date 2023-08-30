@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { gql } from "./generated/gql";
+import { gql } from "../../generated";
 import { useQuery } from "@apollo/client";
 
 const ordersQuery = gql(`

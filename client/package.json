@@ -2,25 +2,13 @@
   "name": "minishop-client",
   "version": "1.0.0",
   "description": "",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start": "parcel src/index.html",
-    "build": "parcel build",
     "codegen": "graphql-codegen",
     "codegen-watch": "graphql-codegen -w"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "5.0.0",
     "@graphql-codegen/client-preset": "4.1.0",
-    "@types/react": "18.2.21",
-    "parcel": "2.9.3",
-    "process": "0.11.10"
-  },
-  "dependencies": {
-    "@apollo/client": "3.8.1",
-    "graphql": "16.8.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-router-dom": "6.15.0"
+    "@parcel/watcher": "^2.3.0"
   }
 }

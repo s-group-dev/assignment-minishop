@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
 import { Link } from "react-router-dom";
-import { gql } from "./generated/gql";
+import { gql } from "../../generated";
 import { ProductCard } from "./ProductCard";
 
 const getProductsQuery = gql(`
