@@ -21,6 +21,7 @@ export function Orders() {
   const { loading, data } = useQuery(ordersQuery, {
     variables: { customerId: "user-1" },
   });
+
   return (
     <>
       <h1>My order history</h1>
