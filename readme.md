@@ -9,9 +9,12 @@ They currently include some of the expected functionality, but you are free to r
 In order to run this project locally, please read the documentation in each and every folder
 
 ```
-- client
++ client
 |-- web (React)
+  |-- src
 |-- mobile (React Native)
-|-- schema (GraphQL)
-|-- server (Apollo)
+  |-- src
++ schema (GraphQL)
++ server (Apollo)
+|-- src
 ```
