@@ -1,7 +1,8 @@
-import React from 'react';
-import { gql, useQuery } from '@apollo/client';
+import type { GetProductsQuery } from '../../../generated/graphql';
 
+import React from 'react';
 import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { gql, useQuery } from '@apollo/client';
 
 import Header from '../components/Header';
 import ProductCard from '../components/ProductCard';
@@ -17,7 +18,7 @@ const getProductsQuery = gql(`
 `);
 
 const Products = ({ navigation }) => {
-  const { loading, data } = useQuery(getProductsQuery);
+  const { loading, data } = useQuery<GetProductsQuery>(getProductsQuery);
 
   const displayData = () => {
     if (!data) {
